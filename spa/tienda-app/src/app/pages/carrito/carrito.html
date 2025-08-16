@@ -1,0 +1,22 @@
+<h2 style="margin:16px 0; display: flex; justify-content: center;">Carrito</h2>
+<div class="grid-elementos">
+    <div *ngIf="!items.length" style="opacity:.7;margin:8px 0">Tu carrito está vacío</div>
+    <mat-card *ngFor="let i of items" style="margin-bottom:12px; padding: 15px;">
+        <mat-card-title>{{ i.articulo.descripcion }}</mat-card-title>
+        <mat-card-subtitle>{{ i.cantidad }} × {{ i.articulo.precio | currency }} — {{ i.tienda.sucursal }}</mat-card-subtitle>
+        <mat-card-actions>
+            <button mat-raised-button color="warn" (click)="remove(i.articuloId, i.tiendaId)">Eliminar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+    <mat-divider *ngIf="items.length"></mat-divider>
+<div class="grid-total">
+    <b>Total: {{ total | currency }}</b>
+</div>
+<div class="grid-botones">
+    <div *ngIf="items.length" style="display:flex;gap:12px;align-items:center;margin-top:12px;">
+        <span class="spacer"></span>
+        <button mat-raised-button color="warn" (click)="clear()">Limpiar Carrito</button>
+        <button mat-raised-button color="warn" (click)="checkout()">Checkout</button>
+    </div>
+</div>

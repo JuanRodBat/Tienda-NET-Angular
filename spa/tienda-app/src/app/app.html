@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>Shop Bat</span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/tiendas">Tiendas</a>
+  <button mat-icon-button routerLink="/carrito" aria-label="Carrito">
+    <mat-icon matBadge="{{cartCount}}" matBadgeColor="accent">shopping_cart</mat-icon>
+  </button>
+  <button mat-button (click)="logout()">Cerrar Sesion</button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

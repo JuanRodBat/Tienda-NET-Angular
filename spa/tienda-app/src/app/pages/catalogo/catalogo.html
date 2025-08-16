@@ -1,0 +1,12 @@
+<h2 style="margin:16px 0; display: flex; justify-content: center;">Catálogo Tienda {{tiendaId}}</h2>
+<div class="grid">
+<mat-card *ngFor="let a of items" style="margin-bottom:12px; padding: 15px;">
+    <img *ngIf="a.imagen" mat-card-image [src]="a.imagen" alt="{{a.descripcion}}">
+    <mat-card-title>{{ a.descripcion }}</mat-card-title>
+    <mat-card-subtitle>{{ a.codigo }} — {{ a.precio | currency }}</mat-card-subtitle>
+    <mat-card-content>Stock: {{ a.stock }}</mat-card-content>
+    <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="add(a.articuloId)" [disabled]="a.stock<=0">Agregar</button>
+    </mat-card-actions>
+</mat-card>
+</div>

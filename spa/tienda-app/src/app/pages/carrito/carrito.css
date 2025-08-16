@@ -1,0 +1,39 @@
+.spacer{
+    flex: 1 1 auto
+}
+
+.grid-elementos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:16px; 
+    grid-template-columns: 
+    repeat(
+        auto-fill, 
+        minmax(280px,1fr)
+    ); 
+}
+
+.grid-botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:16px; 
+    grid-template-columns: 
+    repeat(
+        auto-fill, 
+        minmax(280px,1fr)
+    ); 
+}
+
+.grid-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:16px; 
+    grid-template-columns: 
+    repeat(
+        auto-fill, 
+        minmax(280px,1fr)
+    ); 
+}

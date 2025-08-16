@@ -1,0 +1,10 @@
+  <h2 style="margin:16px 0; display: flex; justify-content: center;">Tiendas</h2>
+  <div class="grid">
+    <mat-card *ngFor="let t of tiendas" style="margin-bottom:12px; padding: 15px;">
+      <mat-card-title>{{ t.sucursal }}</mat-card-title>
+      <mat-card-subtitle>{{ t.direccion }}</mat-card-subtitle>
+      <mat-card-actions>
+        <button mat-raised-button color="warm" (click)="open(t.id)">Ver Catálogo</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
