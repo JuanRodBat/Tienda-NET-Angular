@@ -1,6 +1,6 @@
 # Tienda — .NET 8 + Angular + SQL Server
 
-Prueba técnica con **ASP.NET Core 8 (Web API)**, **SQL Server** y **Angular (standalone + Angular Material)**.
+Prueba técnica con **ASP.NET Core 8 (Web API)**, **SQL Server** y **Angular (standalone + Angular Material + Animations)**.
 Incluye autenticación **JWT**, **CRUDs** de Tiendas/Artículos/Clientes, **stock por tienda**, **carrito de compras** y **historial de compras**.
 
 ## Stack
@@ -172,6 +172,16 @@ Flujo: **Login → Tiendas → Catálogo → Carrito → Checkout**
 
 * `01_schema.sql`: CREATE TABLE/VISTA
 * `02_seed.sql`: datos demo (tienda, cliente, artículo, stock)
+
+---
+
+> **Nota rápida para ejecutar localmente**
+> - Actualiza el puerto del API en `spa/tienda-app/src/environments/environment.ts` → `apiBase: 'https://localhost:<PUERTO_API>/api'`.
+> - Configura la cadena de conexión en `api/Company.Project.Front/appsettings.json`: usa `Server=MI_PC\MI_INSTANCIA` **o** `Server=127.0.0.1,<PUERTO_SQL>`. (En dev puedes usar `TrustServerCertificate=True`).
+> - JWT: usa una clave de **≥ 32 caracteres** en `Jwt:Key` (requerido para HS256).
+> - Swagger: haz login (`/api/auth/login`) y en **Authorize** pega **solo** el token (sin `Bearer `).
+> - CORS: la API debe permitir `http://localhost:4200` en `Program.cs` (`UseCors`/`AddCors`).
+> - Si ves `Invalid object name ...`: ejecuta los scripts de `/db` en la **misma instancia** que usa la API **o** revisa los `ToTable(...)`.
 
 ---
 
